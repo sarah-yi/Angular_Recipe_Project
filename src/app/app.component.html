@@ -1,0 +1,65 @@
+<!-- <app-recipe-list></app-recipe-list> -->
+
+<form>
+ 
+  <input type="text" placeholder="Keyword e.g. soup, salad" class="search" />
+
+  <mat-accordion>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Diet labels
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+   
+      <div>
+        <input type="radio" value="balanced" />
+        <span class="diet-title">Balanced</span>
+          <span class="diet-info">Protein/Fat/Carb values in 15/35/50 ratio</span>
+      </div>
+      <div>
+        <input type="radio" value="high-fiber" />
+        <span class="diet-title">High-Fiber</span>
+          <span class="diet-info">More than 5g fiber per serving</span>
+      </div>
+      <div>
+        <input type="radio" value="high-protein" />
+        <span class="diet-title">High-Protein</span>
+          <span class="diet-info">More than 50% of total calories of proteins</span>
+      </div>
+      <div>
+        <input type="radio" value="low carb" />
+        <span class="diet-title">Low Carb</span>
+          <span class="diet-info">Less than 20% of total calories from carbs</span>
+      </div>
+      <div>
+        <input type="radio" value="low fat" />
+        <span class="diet-title">Low Fat</span>
+          <span class="diet-info">Less than 15% of total calories from fat</span>
+      </div>
+      <div>
+        <input type="radio" value="low sodium" />
+        <span class="diet-title">Low Sodium</span>
+          <span class="diet-info">Less than 140mg Na per serving</span>
+      </div>
+   
+  
+    </mat-expansion-panel>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Calories
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+   
+      <input type="text" placeholder="kcal" class="calories" />
+   
+     
+    </mat-expansion-panel>
+  </mat-accordion>
+
+  <button mat-button>Submit</button>
+
+
+
+</form>

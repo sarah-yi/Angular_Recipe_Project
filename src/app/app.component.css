@@ -1,0 +1,22 @@
+form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100vh;
+  border: 3px solid #0760B4; /* blue color */
+}
+
+.search {
+  width: 200px;
+}
+
+.diet-title {
+  font-size: 20px;
+  font-weight: bold;
+  padding-right: 10px;
+}
+
+.diet-info {
+  font-size: 15px;
+}
