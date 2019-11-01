@@ -12,6 +12,15 @@ export class AppComponent implements OnInit {
   accordionList:any;
  
   @ViewChild('accordion',{static:true}) Accordion: MatAccordion
+
+
+  formatLabel(value:number) {
+    if (value >= 2001) {
+      return Math.round(value / 2001) + 'k';
+    }
+
+    return value;
+  }
  
   constructor() {
     this.accordionList = [

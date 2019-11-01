@@ -4,6 +4,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { MatExpansionModule, MatButtonModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatSliderModule } from '@angular/material/slider';
 
 import { AppComponent } from './app.component';
 import { SearchCriteriaComponent } from './search-criteria/search-criteria.component';
@@ -23,6 +27,10 @@ import { FavoritesPageComponent } from './favorites-page/favorites-page.componen
     MatExpansionModule,
     BrowserAnimationsModule,
     FormsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatCheckboxModule,
+    MatSliderModule,
     MatButtonModule
   ],
   providers: [],

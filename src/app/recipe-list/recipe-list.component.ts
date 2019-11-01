@@ -10,9 +10,6 @@ export class RecipeListComponent implements OnInit {
 
   constructor(private searchService: SearchService) { }
     
-  search() {
-
-  }
 
   ngOnInit() {
   }
