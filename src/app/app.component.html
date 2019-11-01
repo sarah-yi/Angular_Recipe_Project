@@ -1,0 +1,80 @@
+<!-- <app-recipe-list></app-recipe-list> -->
+
+<form>
+ 
+  <mat-form-field>
+    <input matInput placeholder="e.g. soup, salad, pizza" type="text"/>
+  </mat-form-field>
+
+  <mat-accordion>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title class="droplist">
+          Diet Labels
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+   
+      <div class="diets">
+        <mat-checkbox>
+        <span class="diet-title">Balanced</span>
+          <span class="diet-info">Protein/Fat/Carb values in 15/35/50 ratio</span>
+        </mat-checkbox>
+      </div>
+      <div class="diets">
+        <mat-checkbox>
+        <span class="diet-title">High-Fiber</span>
+          <span class="diet-info">More than 5g fiber per serving</span>
+        </mat-checkbox>
+      </div>
+      <div class="diets">
+        <mat-checkbox>
+        <span class="diet-title">High-Protein</span>
+          <span class="diet-info">More than 50% of total calories of proteins</span>
+        </mat-checkbox>
+      </div>
+      <div class="diets">
+        <mat-checkbox>
+        <span class="diet-title">Low-Carb</span>
+          <span class="diet-info">Less than 20% of total calories from carbs</span>
+        </mat-checkbox>
+      </div>
+      <div class="diets">
+        <mat-checkbox>
+        <span class="diet-title">Low-Fat</span>
+          <span class="diet-info">Less than 15% of total calories from fat</span>
+        </mat-checkbox>
+      </div>
+      <div class="diets">
+        <mat-checkbox>
+        <span class="diet-title">Low-Sodium</span>
+          <span class="diet-info">Less than 140mg Na per serving</span>
+        </mat-checkbox>
+      </div>
+   
+  
+    </mat-expansion-panel>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title class="droplist">
+          Calories
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+   
+      <!-- <input type="text" placeholder="kcal" class="calories" /> -->
+      <mat-slider
+      thumbLabel
+      [displayWith]="formatLabel"
+      tickInterval="100"
+      min="1"
+      max="2000"
+      ></mat-slider>
+   
+     
+    </mat-expansion-panel>
+  </mat-accordion>
+
+  <button mat-button>Submit</button>
+
+
+
+</form>
