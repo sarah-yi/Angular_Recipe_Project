@@ -8,18 +8,21 @@ export class SearchService {
 
   constructor(private http: HttpClient) { }
 
-
-  fetchData(recipes: string) {
-
-    return this.http.get(`https://api.edamam.com/search`);
+  fetchData(searchValue: string) {
+    const url = "https://api.edamam.com/search";
+    return this.http.get<any[]>(url + '');
   }
 
-  // keyword: string = '';
-  // dietLabel: boolean = false;
+
+  keyword: string = '';
+  dietLabel: boolean = false;
 
   // const params = new HttpParams()
   //   .set('app_key', '30748527d5cb18fb40c29a614c16c1d1')
   //   .set('app_id', 'f525747a')
-  //   .set('q', '')
-  //   .set()
+  //   .set('q', '');
+    // .set()
+
+    // console.log(params.toString());
 }
+

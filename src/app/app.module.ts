@@ -13,13 +13,18 @@ import { AppComponent } from './app.component';
 import { SearchCriteriaComponent } from './search-criteria/search-criteria.component';
 import { RecipeListComponent } from './recipe-list/recipe-list.component';
 import { FavoritesPageComponent } from './favorites-page/favorites-page.component';
+import { ResultsComponent } from './results/results.component';
+
+import { SearchService } from './search-criteria/search.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     SearchCriteriaComponent,
     RecipeListComponent,
-    FavoritesPageComponent
+    FavoritesPageComponent,
+    ResultsComponent,
+    SearchService
   ],
   imports: [
     BrowserModule,
@@ -33,7 +38,9 @@ import { FavoritesPageComponent } from './favorites-page/favorites-page.componen
     MatSliderModule,
     MatButtonModule
   ],
-  providers: [],
+  providers: [
+    SearchService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

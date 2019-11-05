@@ -42,3 +42,8 @@
 
 
 </form> -->
+
+<form #searchForm='ngForm' (ngSubmit)='handleSubmit(searchForm'>
+  <input placeholder=" {{ placeholder }} " type="text" name="query" ngModel>
+  <button>Submit</button>
+</form>

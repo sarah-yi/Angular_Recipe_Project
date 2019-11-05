@@ -1,6 +1,8 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatAccordion } from '@angular/material';
 
+import { SearchService } from './search-criteria/search.service'; 
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -8,7 +10,7 @@ import { MatAccordion } from '@angular/material';
 })
 export class AppComponent implements OnInit {
   panelOpenState = false;
- 
+  searchValue: string = '';
   accordionList:any;
  
   @ViewChild('accordion',{static:true}) Accordion: MatAccordion
@@ -22,7 +24,7 @@ export class AppComponent implements OnInit {
     return value;
   }
  
-  constructor() {
+  constructor(private searchService: SearchService) {
     this.accordionList = [
       {
         id:"panel-1",
@@ -45,6 +47,12 @@ export class AppComponent implements OnInit {
       },
     ]
    }
+
+  //  public fetchData() {
+  //    this.searchService.fetchData(this.searchValue)
+  //    .subscribe((response) =>  {this.params=response;}
+  //    );
+  //  }
  
   ngOnInit() {
   }
