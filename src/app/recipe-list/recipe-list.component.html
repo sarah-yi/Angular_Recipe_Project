@@ -1,9 +1,19 @@
-<search (onSearch)="handleSearch($event)"></search>
+<!-- <app-search-criteria (onSearch)="handleSearch($event)"></app-search-criteria> -->
 
-<form #searchForm='ngForm' (ngSubmit)='handleSubmit(searchForm)'>
+<nav>
+  <a routerLink="/" routerLinkActive="active">Home</a>
+  <a routerLink="/recipes" routerLinkActive="active">Recipes</a>  
+  <a routerLink="/favorites" routerLinkActive="active">Favorites</a>  
+  </nav>
+  <!-- <router-outlet></router-outlet> -->
+
+  <!-- working on routing to recipes/results page -->
+
+
+<form #searchForm='ngForm' (ngSubmit)='search(searchValue)'>
  
   <mat-form-field>
-    <input matInput placeholder="e.g. soup, salad, pizza" type="text" name="query" ngModel/>
+    <input matInput placeholder="e.g. soup, salad, pizza" type="text" name="query" [(ngModel)]="searchValue"/>
   </mat-form-field>
 
   <mat-accordion>
@@ -16,38 +26,38 @@
    
       <div class="diets">
         <mat-checkbox>
-        <span class="diet-title">Balanced</span>
-          <span class="diet-info">Protein/Fat/Carb values in 15/35/50 ratio</span>
+        <span class="diet-title">Vegetarian</span>
+          <span class="diet-info">No meat</span>
         </mat-checkbox>
       </div>
       <div class="diets">
         <mat-checkbox>
-        <span class="diet-title">High-Fiber</span>
-          <span class="diet-info">More than 5g fiber per serving</span>
+        <span class="diet-title">Vegan</span>
+          <span class="diet-info">No aniaml by-products</span>
         </mat-checkbox>
       </div>
       <div class="diets">
         <mat-checkbox>
-        <span class="diet-title">High-Protein</span>
-          <span class="diet-info">More than 50% of total calories of proteins</span>
+        <span class="diet-title">Ketogenic</span>
+          <span class="diet-info">High fat and low carb</span>
         </mat-checkbox>
       </div>
       <div class="diets">
         <mat-checkbox>
-        <span class="diet-title">Low-Carb</span>
-          <span class="diet-info">Less than 20% of total calories from carbs</span>
+        <span class="diet-title">Low Fodmap</span>
+          <span class="diet-info">Good Luck!</span>
         </mat-checkbox>
       </div>
       <div class="diets">
         <mat-checkbox>
-        <span class="diet-title">Low-Fat</span>
-          <span class="diet-info">Less than 15% of total calories from fat</span>
+        <span class="diet-title">Gluten-Free</span>
+          <span class="diet-info">No gluten</span>
         </mat-checkbox>
       </div>
       <div class="diets">
         <mat-checkbox>
-        <span class="diet-title">Low-Sodium</span>
-          <span class="diet-info">Less than 140mg Na per serving</span>
+        <span class="diet-title">Dairy Free</span>
+          <span class="diet-info">No dairy products</span>
         </mat-checkbox>
       </div>
    
@@ -79,6 +89,6 @@
 
 </form>
 
-<div *ngIf="data.length">
+<div *ngIf="data && data.length">
   <results [data]="data"></results>
 </div>

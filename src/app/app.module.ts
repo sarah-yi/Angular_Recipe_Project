@@ -8,6 +8,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatSliderModule } from '@angular/material/slider';
+import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { SearchCriteriaComponent } from './search-criteria/search-criteria.component';
@@ -17,14 +18,19 @@ import { ResultsComponent } from './results/results.component';
 
 import { SearchService } from './search-criteria/search.service';
 
+const appRoutes: Routes = [
+  {path: '', component: AppComponent, pathMatch: 'full'},
+  {path: 'recipes', component: ResultsComponent},
+  {path: 'favorites', component: FavoritesPageComponent}
+];
+
 @NgModule({
   declarations: [
     AppComponent,
     SearchCriteriaComponent,
     RecipeListComponent,
     FavoritesPageComponent,
-    ResultsComponent,
-    SearchService
+    ResultsComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +42,8 @@ import { SearchService } from './search-criteria/search.service';
     MatInputModule,
     MatCheckboxModule,
     MatSliderModule,
-    MatButtonModule
+    MatButtonModule,
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [
     SearchService

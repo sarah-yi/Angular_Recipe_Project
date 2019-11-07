@@ -7,6 +7,7 @@ import { SearchService } from '../search-criteria/search.service';
   styleUrls: ['./recipe-list.component.css']
 })
 export class RecipeListComponent {
+  recipeResults: any[] = [];
 
   constructor(private searchService: SearchService) { }
     
@@ -22,6 +23,22 @@ export class RecipeListComponent {
   //   this.data = [];
   // }
 
+  // diet: string = ''; 
+
+  search(searchValue: string): void {
+    console.log(searchValue);
+    this.searchService
+      .fetchData(searchValue)
+      // .then(searchValue = diet)
+      .then((response:any[]) => {
+        console.log(response);
+        this.recipeResults = response;
+      }, error => {
+        console.log(`oops ${error}`);
+      });
+  }
+
 }
+
 
 
