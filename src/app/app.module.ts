@@ -19,8 +19,8 @@ import { ResultsComponent } from './results/results.component';
 import { SearchService } from './search-criteria/search.service';
 
 const appRoutes: Routes = [
-  {path: '', component: AppComponent, pathMatch: 'full'},
-  {path: 'recipes', component: ResultsComponent},
+  {path: '', component: RecipeListComponent, pathMatch: 'full'},
+  {path: 'results', component: ResultsComponent},
   {path: 'favorites', component: FavoritesPageComponent}
 ];
 

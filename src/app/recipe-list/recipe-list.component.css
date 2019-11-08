@@ -62,3 +62,8 @@ button {
   color: #0760B4;
   width: 150px;
 }
+
+a.active {
+  color: yellow;
+  font-weight: bold;
+}
